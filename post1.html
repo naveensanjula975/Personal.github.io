@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>DevSearch Project</title>
-
-
+	<title>DevSearch Platform - Full Stack Django Project | Naveen Sanjula</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+	<meta name="description"
+		content="DevSearch Platform - A comprehensive Django CRUD project for developer portfolio management and networking with authentication, search, and real-time features.">
 
 	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
 	<link rel="stylesheet" type="text/css" href="default.css">
+	<link id="theme-style" rel="stylesheet" type="text/css" href="">
 	<link rel="icon" href="images/Profile.jpg" type="image/jpg">
-
-
-
-	<style type="text/css">
-		.img-container{
-			max-width: 600px;
-		}
-
-		img{
-			width: 100%
-		}
-
-	</style>
-
 </head>
-<body>
-	<div class="nav-wrapper">
 
+<body class="post-page-wrapper">
+	<!-- Navigation -->
+	<div class="nav-wrapper">
 		<a href="index.html">
 			<div class="dots-wrapper">
 				<div id="dot-1" class="browser-dot"></div>
@@ -39,73 +26,143 @@
 				<div id="dot-3" class="browser-dot"></div>
 			</div>
 		</a>
-
 		<ul id="navigation">
+			<li><a href="index.html">Home</a></li>
 			<li><a href="index.html#contact">Contact</a></li>
-
 		</ul>
 	</div>
 
-	<div class="main-container">
-		<br>
+	<!-- Header Section -->
+	<header class="post-header">
+		<div class="main-container">
+			<nav class="breadcrumb-nav">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Portfolio</a></li>
+					<li class="breadcrumb-item"><a href="index.html#projects">Projects</a></li>
+					<li class="breadcrumb-item active">DevSearch Platform</li>
+				</ol>
+			</nav>
 
-		<!-- <div class="img-container">
-			<img src="images/dash.jpg">
-		</div>  -->
-		
-		<h3>DevSearch Project</h3> 
-
-		 <p>Django CRUD Project.</p> 
-
-		 <h5>Technologies:</h5>
-		<ul>
-			<li>- Python</li>
-			<li>- Django + Django REST Framework</li>
-			<li>- HTML</li>
-			<li>- CSS</li>
-			<li>- JavaScript</li>
-			<li>- Postgresql</li>
-		</ul> 
-
-	
-		<h5>Build a Django website</h5>
-		<div class="img-container">
-			<img src="images/home-django.png">
+			<div class="post-title-section">
+				<div class="post-category-badge">Web Application</div>
+				<h1 class="post-title">DevSearch Platform</h1>
+				<p class="post-subtitle">A comprehensive Django CRUD project for developer portfolio management and
+					networking</p>
+			</div>
 		</div>
-		<br>
-		<br>
-		<li>Hosting a website on a live server</li>
-		<li>Build a review and voting system</li>
-		<li>User Login, Logout and Flash Messages</li>
-		<br>
-		<br>
-		<div class="img-container">
-			<img src="images/login-dango.png">
-		</div>
-		<br>
-		<br>
-		<li>Designing databases with Django</li>
-		<li>Build a review and voting system</li>
-		<li>User Registration and Authentication</li>
-		<li>Search & Pagination</li>
-		<li>Search + Pagination Hacky Fix</li>
-		<!-- <div class="img-container">
-			<img src="images/lab-dash.jpg">
-			</div>  -->
-		<br>
-		<h5>
-           	 <button type="button" class="btn btn-lg btn-warning">
-			 <a href="https://developer-family.herokuapp.com/">Live preview</a>
-		  </button>
-  		</h5>
-		<br>
-		<br>
-		<h5>Sourse Code on <a href="https://github.com/naveensanjula975/DevSearch">GitHub</a>[Private Now]</h5>
+	</header>
 
-	
-		
+	<!-- Main Content -->
+	<main class="post-content">
+		<!-- Project Overview -->
+		<section class="content-section">
+			<h3><i class="fas fa-rocket"></i> Project Overview</h3>
+			<p>DevSearch is a full-featured web platform built with Django that allows developers to showcase their
+				portfolios, connect with other developers, and collaborate on projects. The platform includes user
+				authentication, real-time messaging, project reviews, and advanced search functionality.</p>
 
-	</div> 
+			<div class="project-status status-live">
+				<i class="fas fa-check-circle"></i> Live & Deployed
+			</div>
+		</section>
 
+		<!-- Hero Image -->
+		<section class="image-gallery">
+			<img src="images/home-django.png" alt="DevSearch Platform Homepage" class="project-image">
+		</section>
+
+		<!-- Technologies Used -->
+		<section class="content-section">
+			<h3><i class="fas fa-code"></i> Technologies & Tools</h3>
+			<ul class="tech-list">
+				<li><i class="fab fa-python"></i> Python</li>
+				<li><i class="fab fa-django"></i> Django + Django REST Framework</li>
+				<li><i class="fas fa-database"></i> PostgreSQL</li>
+				<li><i class="fab fa-html5"></i> HTML5</li>
+				<li><i class="fab fa-css3-alt"></i> CSS3</li>
+				<li><i class="fab fa-js"></i> JavaScript</li>
+				<li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+				<li><i class="fas fa-cloud"></i> Heroku Deployment</li>
+			</ul>
+		</section>
+
+		<!-- Key Features -->
+		<section class="content-section">
+			<h3><i class="fas fa-star"></i> Key Features</h3>
+			<ul class="feature-list">
+				<li data-feature="auth"><i class="fas fa-user-shield"></i> User Registration, Authentication & Profile
+					Management</li>
+				<li data-feature="showcase"><i class="fas fa-briefcase"></i> Developer Portfolio Showcase with Project
+					Galleries</li>
+				<li data-feature="search"><i class="fas fa-search"></i> Advanced Search & Filtering System</li>
+				<li data-feature="rating"><i class="fas fa-star-half-alt"></i> Project Review & Rating System</li>
+				<li data-feature="messaging"><i class="fas fa-comments"></i> Real-time Messaging Between Developers</li>
+				<li data-feature="tags"><i class="fas fa-tags"></i> Skill Tags & Technology Matching</li>
+				<li data-feature="responsive"><i class="fas fa-mobile-alt"></i> Responsive Design for All Devices</li>
+				<li data-feature="admin"><i class="fas fa-cog"></i> Admin Dashboard for Content Management</li>
+				<li data-feature="notifications"><i class="fas fa-bell"></i> Email Notifications & Flash Messages</li>
+				<li data-feature="performance"><i class="fas fa-tachometer-alt"></i> Pagination for Optimized
+					Performance</li>
+			</ul>
+		</section>
+
+		<!-- Authentication System -->
+		<section class="image-gallery">
+			<img src="images/login-dango.png" alt="DevSearch Authentication System" class="project-image">
+		</section>
+
+		<!-- Technical Implementation -->
+		<section class="content-section">
+			<h3><i class="fas fa-cogs"></i> Technical Implementation</h3>
+
+			<h5><i class="fas fa-database"></i> Database Design</h5>
+			<p>Designed and implemented a robust database schema using Django ORM with PostgreSQL, featuring optimized
+				relationships between users, projects, skills, and reviews for scalable data management.</p>
+
+			<h5><i class="fas fa-shield-alt"></i> Security Features</h5>
+			<p>Implemented comprehensive security measures including CSRF protection, user authentication, authorization
+				levels, and secure password handling following Django best practices.</p>
+
+			<h5><i class="fas fa-search"></i> Advanced Search System</h5>
+			<p>Built a powerful search functionality with filters for skills, location, and project types, combined with
+				optimized pagination for handling large datasets efficiently.</p>
+
+			<h5><i class="fas fa-comments"></i> Real-time Communication</h5>
+			<p>Developed a messaging system that allows developers to connect and collaborate, with notification systems
+				and message threading capabilities.</p>
+		</section>
+
+		<!-- Project Links -->
+		<section class="action-buttons">
+			<a href="https://developer-family.herokuapp.com/" target="_blank" class="btn-modern btn-primary-modern">
+				<i class="fas fa-external-link-alt"></i> Live Demo
+			</a>
+			<a href="https://github.com/naveensanjula975/DevSearch" target="_blank"
+				class="btn-modern btn-secondary-modern">
+				<i class="fab fa-github"></i> View Source Code
+			</a>
+		</section>
+
+		<!-- Additional Information -->
+		<section class="content-section">
+			<h3><i class="fas fa-info-circle"></i> Project Details</h3>
+			<p><strong>Development Time:</strong> 3 months</p>
+			<p><strong>Team Size:</strong> Solo Project</p>
+			<p><strong>Deployment:</strong> Heroku with PostgreSQL</p>
+			<p><strong>Status:</strong> Currently live and accepting user registrations</p>
+
+			<h5><i class="fas fa-lightbulb"></i> Challenges & Solutions</h5>
+			<p>One of the main challenges was implementing an efficient search system that could handle multiple filters
+				without performance degradation. This was solved by implementing database indexing and optimized query
+				patterns.</p>
+
+			<h5><i class="fas fa-chart-line"></i> Future Enhancements</h5>
+			<p>Planning to add real-time chat functionality using WebSockets, integration with GitHub API for automatic
+				project importing, and advanced analytics dashboard for users.</p>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>

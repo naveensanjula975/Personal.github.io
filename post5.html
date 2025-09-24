@@ -1,37 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>E-commerce website Project</title>
-
-
+	<title>E-commerce Shopping Platform | Django Project | Naveen Sanjula</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
-
 	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 	<link rel="stylesheet" type="text/css" href="default.css">
 	<link rel="icon" href="images/Profile.jpg" type="image/jpg">
-
-
-
-	<style type="text/css">
-		.img-container{
-			max-width: 600px;
-		}
-
-		img{
-			width: 100%
-		}
-
-	</style>
-
 </head>
-<body>
-	<div class="nav-wrapper">
 
+<body class="post-page-wrapper">
+	<div class="nav-wrapper">
 		<a href="index.html">
 			<div class="dots-wrapper">
 				<div id="dot-1" class="browser-dot"></div>
@@ -39,73 +20,135 @@
 				<div id="dot-3" class="browser-dot"></div>
 			</div>
 		</a>
-
 		<ul id="navigation">
+			<li><a href="index.html">Home</a></li>
 			<li><a href="index.html#contact">Contact</a></li>
-
 		</ul>
 	</div>
 
-	<div class="main-container">
-		<br>
+	<header class="post-header">
+		<div class="main-container">
+			<nav class="breadcrumb-nav">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Portfolio</a></li>
+					<li class="breadcrumb-item"><a href="index.html#projects">Projects</a></li>
+					<li class="breadcrumb-item active">E-commerce Platform</li>
+				</ol>
+			</nav>
+			<div class="post-title-section">
+				<div class="post-category-badge">E-Commerce</div>
+				<h1 class="post-title">Shopping Platform</h1>
+				<p class="post-subtitle">Full-featured e-commerce website with payment integration and inventory
+					management</p>
+			</div>
+		</div>
+	</header>
 
-		<!-- <div class="img-container">
+	<main class="post-content">
+		<section class="content-section">
+			<h3><i class="fas fa-shopping-cart"></i> Project Overview</h3>
+			<p>A comprehensive e-commerce platform built with Django featuring product catalog, shopping cart, user
+				authentication, payment processing, and admin dashboard for inventory management.</p>
+			<div class="project-status status-live"><i class="fas fa-check-circle"></i> Live & Operational</div>
+		</section>
+
+		<section class="image-gallery">
+			<img src="images/project-e-1.png" alt="E-commerce Platform Homepage" class="project-image">
+		</section>
+
+		<section class="content-section">
+			<h3><i class="fas fa-code"></i> Technologies</h3>
+			<ul class="tech-list">
+				<li><i class="fab fa-python"></i> Python</li>
+				<li><i class="fas fa-globe"></i> Django</li>
+				<li><i class="fas fa-database"></i> MySQL</li>
+				<li><i class="fab fa-js"></i> JavaScript</li>
+				<li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+			</ul>
+		</section>
+
+		<section class="content-section">
+			<h3><i class="fas fa-star"></i> Key Features</h3>
+			<ul class="feature-list">
+				<li>Product Catalog with Categories</li>
+				<li>Shopping Cart & Wishlist</li>
+				<li>User Registration & Authentication</li>
+				<li>Payment Gateway Integration</li>
+				<li>Order Management System</li>
+				<li>Admin Dashboard</li>
+			</ul>
+		</section>
+
+		<section class="action-buttons">
+			<a href="#" class="btn-modern btn-primary-modern"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+			<a href="#" class="btn-modern btn-secondary-modern"><i class="fab fa-github"></i> Source Code</a>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
+<br>
+
+<!-- <div class="img-container">
 			<img src="images/dash.jpg">
 		</div>  -->
-		
-		<h3>E-commerce Project</h3> 
 
-		 <p>E-commerce-shopping-django project.</p> 
+<h3>E-commerce Project</h3>
 
-		 <h5>Technologies:</h5>
-		<ul>
-			<li>- Python</li>
-			<li>- Django + Django REST Framework</li>
-			<li>- HTML</li>
-			<li>- CSS</li>
-			<li>- JavaScript</li>
-			<li>- Scss</li>
-		</ul> 
+<p>E-commerce-shopping-django project.</p>
 
-	
-		<h5>Build a Django website</h5>
-		<div class="img-container">
-			<img src="images/project-e-1.png">
-		</div>
-		<br>
-		<br>
-		<li>Hosting a website on a live server</li>
-		<li>Build a review and voting system</li>
-		<li>User Login, Logout and Flash Messages</li>
-		<br>
-		<br>
-		<div class="img-container">
-			<img src="images/project-e-2.png">
-		</div>
-		<br>
-		<br>
-		<li>Designing databases with Django</li>
-		<li>Build a review and voting system</li>
-		<li>User Registration and Authentication</li>
-		<li>Search & Pagination</li>
-		<li>Search + Pagination Hacky Fix</li>
-		<!-- <div class="img-container">
+<h5>Technologies:</h5>
+<ul>
+	<li>- Python</li>
+	<li>- Django + Django REST Framework</li>
+	<li>- HTML</li>
+	<li>- CSS</li>
+	<li>- JavaScript</li>
+	<li>- Scss</li>
+</ul>
+
+
+<h5>Build a Django website</h5>
+<div class="img-container">
+	<img src="images/project-e-1.png">
+</div>
+<br>
+<br>
+<li>Hosting a website on a live server</li>
+<li>Build a review and voting system</li>
+<li>User Login, Logout and Flash Messages</li>
+<br>
+<br>
+<div class="img-container">
+	<img src="images/project-e-2.png">
+</div>
+<br>
+<br>
+<li>Designing databases with Django</li>
+<li>Build a review and voting system</li>
+<li>User Registration and Authentication</li>
+<li>Search & Pagination</li>
+<li>Search + Pagination Hacky Fix</li>
+<!-- <div class="img-container">
 			<img src="images/lab-dash.jpg">
 			</div>  -->
-		<br>
-		<h5>
-           	 <button type="button" class="btn btn-lg btn-warning">
-			 <a href="https://famms-shopping.herokuapp.com/">Live preview</a>
-		  </button>
-  		</h5>
-		<br>
-		<br>
-		<h5>Sourse Code on <a href="https://github.com/naveensanjula975/E-commerce-shopping-django">GitHub</a></h5>
+<br>
+<h5>
+	<button type="button" class="btn btn-lg btn-warning">
+		<a href="https://famms-shopping.herokuapp.com/">Live preview</a>
+	</button>
+</h5>
+<br>
+<br>
+<h5>Sourse Code on <a href="https://github.com/naveensanjula975/E-commerce-shopping-django">GitHub</a></h5>
 
-	
-		
 
-	</div> 
+
+
+</div>
 
 </body>
+
 </html>
