@@ -8,6 +8,27 @@ if (theme == null) {
 	setTheme(theme)
 }
 
+// Load EmailJS configuration from config.js
+async function loadEmailJSConfig() {
+	try {
+		// Try to load config.js
+		const response = await fetch('./config.js');
+		if (response.ok) {
+			const configText = await response.text();
+			// Extract the EMAILJS_CONFIG object from the file
+			const configMatch = configText.match(/EMAILJS_CONFIG\s*=\s*({[\s\S]*?});/);
+			if (configMatch) {
+				// Simple eval of the config object (safe since it's your own code)
+				const config = eval('(' + configMatch[1] + ')');
+				return config;
+			}
+		}
+	} catch (error) {
+		console.warn('Could not load config.js:', error);
+	}
+	return null;
+}
+
 // Handle both old theme-dot class and new theme-btn class
 let themeDots = document.getElementsByClassName('theme-dot')
 let themeButtons = document.getElementsByClassName('theme-btn')
@@ -92,21 +113,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Contact form functionality
 document.addEventListener('DOMContentLoaded', function () {
-	// Initialize EmailJS (you'll need to replace with your actual EmailJS credentials)
-	emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+	// Load EmailJS configuration
+	loadEmailJSConfig().then(config => {
+		if (config) {
+			emailjs.init(config.PUBLIC_KEY);
+		}
 
-	const contactForm = document.getElementById('contact-form');
-	const submitBtn = document.getElementById('submit-btn');
+		const contactForm = document.getElementById('contact-form');
+		const submitBtn = document.getElementById('submit-btn');
 
-	if (contactForm) {
-		contactForm.addEventListener('submit', handleFormSubmit);
-	}
+		if (contactForm) {
+			contactForm.addEventListener('submit', handleFormSubmit);
+		}
 
-	// Add real-time validation to form fields
-	const formFields = contactForm.querySelectorAll('.input-field');
-	formFields.forEach(field => {
-		field.addEventListener('blur', validateField);
-		field.addEventListener('input', clearFieldError);
+		// Add real-time validation to form fields
+		const formFields = contactForm.querySelectorAll('.input-field');
+		formFields.forEach(field => {
+			field.addEventListener('blur', validateField);
+			field.addEventListener('input', clearFieldError);
+		});
 	});
 });
 
@@ -135,7 +160,7 @@ function handleFormSubmit(e) {
 		message: formData.get('message').trim()
 	};
 
-	// Send email (placeholder for now - will implement EmailJS next)
+	// Send email with current config
 	sendContactEmail(contactData);
 }
 
@@ -310,31 +335,61 @@ function showMessage(message, type = 'success') {
 	}, 5000);
 }
 
-// Placeholder function for sending email (will implement EmailJS integration next)
-function sendContactEmail(contactData) {
-	// Try to send email using EmailJS
+// Send email using EmailJS or fallback method
+async function sendContactEmail(contactData) {
+	// Load configuration
+	const config = await loadEmailJSConfig();
+
+	// EmailJS template parameters
 	const templateParams = {
 		from_name: contactData.name,
 		from_email: contactData.email,
 		subject: contactData.subject,
 		message: contactData.message,
-		reply_to: contactData.email
+		reply_to: contactData.email,
+		to_email: 'naveensanjula15@gmail.com' // Your email address
 	};
 
-	// Replace with your EmailJS service ID and template ID
-	emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-		.then(function (response) {
-			console.log('Email sent successfully:', response);
+	// Try EmailJS first (if config is available)
+	if (config && typeof emailjs !== 'undefined') {
+		try {
+			await emailjs.send(config.SERVICE_ID, config.TEMPLATE_ID, templateParams);
+			console.log('Email sent successfully via EmailJS');
 			hideLoadingState();
 			showMessage('Thank you for your message! I will get back to you soon.');
 			document.getElementById('contact-form').reset();
-		})
-		.catch(function (error) {
-			console.error('Error sending email:', error);
-			hideLoadingState();
+			return;
+		} catch (error) {
+			console.error('EmailJS error:', error);
+			// Fall through to fallback method
+		}
+	}
 
-			// Fallback: show success message and provide alternative contact info
-			showMessage('Thank you for your message! If you don\'t hear back soon, please email me directly at your-email@example.com');
-			document.getElementById('contact-form').reset();
-		});
+	// Fallback to mailto method
+	fallbackToMailto(contactData);
+}
+
+function fallbackToMailto(contactData) {
+	// Create mailto link as fallback
+	const subject = encodeURIComponent(`Portfolio Contact: ${contactData.subject}`);
+	const body = encodeURIComponent(
+		`Name: ${contactData.name}\n` +
+		`Email: ${contactData.email}\n\n` +
+		`Message:\n${contactData.message}\n\n` +
+		`---\nSent from portfolio contact form`
+	);
+
+	const mailtoLink = `mailto:naveensanjula15@gmail.com?subject=${subject}&body=${body}`;
+
+	// Try to open default email client
+	try {
+		window.location.href = mailtoLink;
+		hideLoadingState();
+		showMessage('Your default email client should open. If not, please email me directly at naveensanjula15@gmail.com');
+		document.getElementById('contact-form').reset();
+	} catch (error) {
+		console.error('Mailto error:', error);
+		hideLoadingState();
+		showMessage('Please email me directly at naveensanjula15@gmail.com', 'error');
+	}
 }
