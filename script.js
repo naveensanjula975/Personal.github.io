@@ -8,6 +8,65 @@ if (theme == null) {
 	setTheme(theme)
 }
 
+// Trading Bot Dashboard Animations
+document.addEventListener('DOMContentLoaded', function () {
+	// Typing animation for hero badge
+	const typingText = document.getElementById('typing-text');
+	const textToType = 'Full Stack Developer';
+	let charIndex = 0;
+
+	function typeText() {
+		if (charIndex < textToType.length) {
+			typingText.textContent = textToType.substring(0, charIndex + 1);
+			charIndex++;
+			setTimeout(typeText, 100); // Speed of typing (100ms per character)
+		}
+	}
+
+	if (typingText) {
+		typeText();
+	}
+
+	// Animate profit value
+	animateProfit();
+	// Update trading data periodically
+	setInterval(animateProfit, 3000);
+
+	// Animate trade items appearing
+	const tradeItems = document.querySelectorAll('.trade-item');
+	tradeItems.forEach((item, index) => {
+		item.style.opacity = '0';
+		item.style.transform = 'translateX(-20px)';
+		setTimeout(() => {
+			item.style.transition = 'all 0.5s ease';
+			item.style.opacity = '1';
+			item.style.transform = 'translateX(0)';
+		}, 200 * (index + 1));
+	});
+});
+
+function animateProfit() {
+	const profitElement = document.querySelector('.stat-value');
+	if (!profitElement) return;
+
+	// Random profit between 2500 and 3000
+	const newProfit = (Math.random() * 500 + 2500).toFixed(0);
+	const newPercentage = (Math.random() * 5 + 10).toFixed(1);
+
+	// Animate the change
+	profitElement.style.transform = 'scale(1.1)';
+	profitElement.textContent = `+$${newProfit}`;
+
+	const percentElement = document.querySelector('.stat-change.positive');
+	if (percentElement) {
+		percentElement.textContent = `+${newPercentage}%`;
+	}
+
+	setTimeout(() => {
+		profitElement.style.transform = 'scale(1)';
+	}, 200);
+}
+
 // Load EmailJS configuration from config.js
 async function loadEmailJSConfig() {
 	try {

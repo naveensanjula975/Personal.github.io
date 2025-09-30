@@ -51,15 +51,15 @@
 			<div class="hero-content">
 				<div class="hero-text">
 					<div class="hero-badge">
-						<i class="fas fa-code"></i>
-						<span>Full Stack Developer</span>
+						<i class="fas fa-robot"></i>
+						<span id="typing-text"></span>
 					</div>
 					<h1 class="hero-title">
 						Hi, I'm <span class="highlight">Naveen Sanjula</span>
 					</h1>
 					<p class="hero-subtitle">
-						Passionate developer creating innovative web solutions with modern technologies.
-						Specialized in Django, React, and full-stack development.
+						Building intelligent trading bots and innovative web solutions with cutting-edge technologies.
+						Specialized in algorithmic trading, Django, React, and full-stack development.
 					</p>
 					<div class="hero-status">
 						<span class="status-indicator"></span>
@@ -101,10 +101,17 @@
 								<span class="tech-icon django">
 									<i class="fas fa-server"></i>
 								</span>
+								<span class="tech-icon pinescript">
+									<i class="fas fa-mountain"></i>
+								</span>
+								<span class="tech-icon mql">
+									<i class="fas fa-robot"></i>
+								</span>
 							</div>
 						</div>
 					</div>
 
+					<!-- Code Preview with Trading Bot Theme -->
 					<div class="code-preview">
 						<div class="code-header">
 							<div class="code-dots">
@@ -118,27 +125,28 @@
 							<div class="code-line">
 								<span class="code-number">1</span>
 								<span class="code-text"><span class="keyword">class</span> <span
-										class="class">Developer</span>:</span>
+										class="class">Portfolio</span>:</span>
 							</div>
 							<div class="code-line">
 								<span class="code-number">2</span>
 								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">def</span> <span
-										class="function">__init__</span>(self):</span>
+										class="function">analyze_market</span>(self):</span>
 							</div>
 							<div class="code-line">
 								<span class="code-number">3</span>
-								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name =
-									<span class="string">"Naveen"</span></span>
+								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signal =
+									<span class="string">"BUY"</span></span>
 							</div>
 							<div class="code-line">
 								<span class="code-number">4</span>
-								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.skills =
-									[<span class="string">"Django"</span>, <span class="string">"React"</span>]</span>
+								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;profit =
+									<span class="number">+12.4%</span></span>
 							</div>
 							<div class="code-line">
 								<span class="code-number">5</span>
-								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.passion =
-									<span class="string">"Coding"</span></span>
+								<span class="code-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+										class="keyword">return</span>
+									<span class="string">"Success"</span></span>
 							</div>
 						</div>
 					</div>
@@ -296,6 +304,8 @@
 				<div class="skills-row">
 					<span class="skill-tag linux"><i class="fab fa-linux"></i> Kali Linux</span>
 					<span class="skill-tag golang"><i class="fab fa-golang"></i> Go</span>
+					<span class="skill-tag pinescript"><i class="fas fa-mountain"></i> PineScript</span>
+					<span class="skill-tag mql"><i class="fas fa-robot"></i> MQL</span>
 				</div>
 			</div>
 		</div>
@@ -514,6 +524,59 @@
 			</form>
 		</div>
 	</section>
+
+	<!-- Footer Section -->
+	<footer class="footer-section">
+		<div class="main-container">
+			<div class="footer-content">
+				<div class="footer-about">
+					<h3>Naveen Sanjula</h3>
+					<p>Full Stack Developer specializing in algorithmic trading, web development, and automation.
+					</p>
+					<div class="footer-social">
+						<a href="https://github.com/naveensanjula975" target="_blank" aria-label="GitHub">
+							<i class="fab fa-github"></i>
+						</a>
+						<a href="https://twitter.com/naveensanjula20" target="_blank" aria-label="Twitter">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="https://www.youtube.com/c/SLSmartTutorial" target="_blank" aria-label="YouTube">
+							<i class="fab fa-youtube"></i>
+						</a>
+						<a href="https://naveensanjula975.github.io/" target="_blank" aria-label="Website">
+							<i class="fas fa-globe"></i>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-links">
+					<div class="footer-column">
+						<h4>Quick Links</h4>
+						<ul>
+							<li><a href="#about">About Me</a></li>
+							<li><a href="#skills">Skills</a></li>
+							<li><a href="#projects">Portfolio</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-column">
+						<h4>Contact Info</h4>
+						<ul>
+							<li><i class="fas fa-envelope"></i> naveensanjula15@gmail.com</li>
+							<li><i class="fas fa-map-marker-alt"></i> Available Remotely</li>
+							<li><i class="fas fa-briefcase"></i> Open to Opportunities</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2025 Naveen Sanjula. All rights reserved.</p>
+				<p class="footer-tagline">Built with <i class="fas fa-heart"></i> using HTML, CSS & JavaScript</p>
+			</div>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="script.js"></script>
 </body>
