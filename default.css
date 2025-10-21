@@ -258,6 +258,37 @@ h6 { font-size: 16px;}
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	position: relative;
+
+/* Pulse animation for availability dot */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(40,167,69,0.6);
+		opacity: 1;
+	}
+	70% {
+		transform: scale(1.45);
+		box-shadow: 0 0 0 8px rgba(40,167,69,0);
+		opacity: 0.75;
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0 rgba(40,167,69,0);
+		opacity: 1;
+	}
+}
+
+.status-indicator {
+	animation: pulse 2s infinite ease-in-out;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.status-indicator {
+		animation: none;
+		transform: none;
+	}
+}
 }
 
 .hero-subtitle {
@@ -366,8 +397,22 @@ h6 { font-size: 16px;}
 	height: 120px;
 	border-radius: 50%;
 	object-fit: cover;
+	object-position: center top;
 	border: 4px solid var(--themeDotBorder);
 	box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+#profile_pic {
+	display: block;
+	margin:0 auto;
+
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+	object-position: center top;
+	border:2px solid var(--borderColor);
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
 }
 
 .profile-status {
@@ -884,6 +929,11 @@ h6 { font-size: 16px;}
 	}
 	
 	.hero-subtitle {
+
+	.hero-title .highlight {
+		display: inline-block;
+		margin-top: 6px;
+	}
 		max-width: 100%;
 	}
 	
@@ -1097,7 +1147,10 @@ h6 { font-size: 16px;}
 	height: 200px;
 	width: 200px;
 	object-fit: cover;
+	object-position: center top;
 	border:2px solid var(--borderColor);
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
 }
 
 
@@ -1657,6 +1710,47 @@ h6 { font-size: 16px;}
 .social-card.website:hover .social-icon{
 	transform: scale(1.1);
 	box-shadow: 0 0 20px rgba(23, 162, 184, 0.3);
+}
+
+/* LinkedIn platform styles */
+.social-card.linkedin .social-icon{
+	/* keep SVG visible, provide a blue background for non-SVG fallback */
+	background: linear-gradient(45deg, #0A66C2, #084b8f);
+}
+
+.social-card.linkedin:hover{
+	border-color: #0A66C2;
+}
+
+.social-card.linkedin:hover .social-icon{
+	transform: scale(1.08);
+	box-shadow: 0 0 20px rgba(10,102,194,0.28);
+}
+
+.social-card.linkedin:hover .social-info h4{
+	color: #0A66C2;
+}
+
+/* Footer LinkedIn SVG hover */
+.footer-social a[aria-label="LinkedIn"] svg{
+	transition: transform 0.25s ease, filter 0.25s ease;
+	transform-origin: center;
+}
+
+.footer-social a[aria-label="LinkedIn"]:hover svg{
+	transform: scale(1.08);
+	filter: drop-shadow(0 6px 14px rgba(10,102,194,0.25));
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.social-card.linkedin:hover .social-icon,
+	.footer-social a[aria-label="LinkedIn"]:hover svg {
+		transform: none;
+		transition: none;
+		box-shadow: none;
+		filter: none;
+	}
 }
 
 #social_img{
@@ -2445,9 +2539,6 @@ h6 { font-size: 16px;}
 	position: relative;
 	transition: all 0.3s ease;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-	display: flex;
-	align-items: center;
-	gap: 12px;
 }
 
 .feature-list li:hover {
